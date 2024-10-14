@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Carta de amor</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="envelope-wrapper">
+                <div class="envelope">
+                    <div class="Letter">
+                        <div class="text">
+                            <strong>Querida Abi.</strong>
+                            <br>
+                                Hola Osita soy yo Nilson, aunque también me
+                                debes de conocer como Nil, Osito, cariño y tu 
+                                niño. Se que a veces no puedo darte algo que
+                                sienta que es realmente bonito o detallado por 
+                                tiempo de la universidad, cuando tengo una idea y
+                                quiero intentarla solo aparecen una que otra 
+                                tarea y mi tiempo se consume y quiero dedicarte 
+                                parte de ese tiempo aunque no pueda darte 
+                                detallitos tan detallados o bien hecho o sin 
+                                prisas solo quiero que sepas que los hago con
+                                mucho cariño y pasión, te mando muchos abrazos 
+                                fuertes y besos a la distancia mi reina.
+                                <br><br>
+                                Con cariño.
+                                <br><br>
+                                Nilson Saballos A.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="heart"></div>
+            </div>
+        </div>
+
+        <!-- Contenedor del reproductor de música -->
+        <div class="music-player">
+            <img class="album-cover" src="disco.png" alt="Album Cover">
+            <div class="info">
+                <p class="song-title">Quisiera tenerte</p>
+                <button class="play-pause-btn">Play</button>
+            </div>
+        </div>
+
+        <!-- Archivo de audio -->
+        <audio id="audio-player">
+            <source src="QuisieraTenerte.mp3" type="audio/mp3">
+        </audio>
+        
+        
+        <script>
+            const envelope = document.querySelector('.envelope-wrapper');
+            envelope.addEventListener('click', () => {
+                envelope.classList.toggle('flap');
+            });
+
+             // Control de reproducción
+            const audio = document.getElementById('audio-player');
+            const playPauseBtn = document.querySelector('.play-pause-btn');
+            const albumCover = document.querySelector('.album-cover');
+
+            playPauseBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseBtn.textContent = 'Pause';
+                    albumCover.classList.add('rotate');
+                } else {
+                    audio.pause();
+                    playPauseBtn.textContent = 'Play';
+                    albumCover.classList.remove('rotate');
+                }
+            });
+
+
+        </script>
+    </body>
+</html>
